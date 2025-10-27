@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "200128575485",
+    "project_id": "easetalk-e8b25",
+    "storage_bucket": "easetalk-e8b25.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200128575485:android:a28f6a71f217d9e115cb94",
+        "android_client_info": {
+          "package_name": "com.example.easetalk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_hNHaXKdnzzfYW-8xDUTyumLCTAYv79M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
