@@ -1,11 +1,28 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/remote_video_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <FrameLayout
+        android:id="@+id/local_video_view_container"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="bottom|end" />
 
     <TextView
         android:id="@+id/tvVideoStatus"
-        android:textSize="20sp"
+        android:text="Status..."
+        android:textSize="18sp"
+        android:layout_margin="20dp"
+        android:layout_gravity="top|center_horizontal"
+        android:textColor="@android:color/white"
+        android:background="#66000000"
+        android:padding="8dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content" />
 </FrameLayout>

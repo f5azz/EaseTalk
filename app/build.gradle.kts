@@ -75,7 +75,7 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics-ktx")
 
     // --- Agora SDK ---
-    implementation("io.agora.rtc:full-sdk:4.2.6")
+    implementation("io.agora.rtc:full-sdk:4.3.0")
 
     // --- Networking ---
     implementation("com.android.volley:volley:1.2.1")
