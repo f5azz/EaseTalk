@@ -80,7 +80,7 @@ class VideoCallActivity : AppCompatActivity() {
     private fun startAICall(userId: String, callType: String, botGender: String, botLanguage: String) {
         val queue = Volley.newRequestQueue(this)
         // ✅ Replace with your backend IP/URL if needed
-        val url = "http://10.149.49.104:3000/start-ai-call"
+        val url = "http://10.207.79.104:3000/start-ai-call"
 
         val data = JSONObject(
             mapOf(
@@ -114,9 +114,9 @@ class VideoCallActivity : AppCompatActivity() {
 
     // ---------- Step 3: Fetch Agora Token ----------
     private fun fetchAgoraToken(channelName: String) {
-        val url = "http://10.149.49.104:3000/generate-agora-token"
+        val url = "http://10.207.79.104:3000/generate-agora-token"
         val json = JSONObject().apply {
-            put("channelName", "EaseTalkAI")
+            put("channelName", channelName)
             put("uid", 0)
         }
 
@@ -129,12 +129,13 @@ class VideoCallActivity : AppCompatActivity() {
                     Log.d("AGORA_TOKEN", "Token fetched: $token")
                     setupVideoSDKEngine()
                 } catch (e: Exception) {
-                    Log.e("TOKEN", "Parsing error: ${e.message}", e)
+                    Log.e("TOKEN", "Parsing error: ${e.message}\nResponse: $response")
                     tvStatus.text = "Error parsing token"
                 }
             },
             { error ->
-                Log.e("TOKEN", "Token fetch failed: ${error.message}", error)
+                val body = error.networkResponse?.data?.toString(Charsets.UTF_8)
+                Log.e("TOKEN", "Token fetch failed: ${error.message}\nBody=$body")
                 tvStatus.text = "Token fetch failed"
             }
         ) {
@@ -144,6 +145,7 @@ class VideoCallActivity : AppCompatActivity() {
 
         Volley.newRequestQueue(this).add(request)
     }
+
 
     // ---------- Step 4: Setup Agora SDK & Join ----------
     private fun setupVideoSDKEngine() {
