@@ -1,24 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- 🌙 Main App Theme -->
-    <style name="Theme.Easetalk" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your main app colors -->
+    <!-- ===== Main App Theme (Material Components, DayNight, NoActionBar) ===== -->
+    <style name="Theme.Easetalk" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Core color tokens (these should exist in res/values/colors.xml) -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryDark">@color/purple_700</item>
-        <item name="colorAccent">@color/teal_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+
+        <!-- System bars -->
         <item name="android:statusBarColor">@color/purple_700</item>
         <item name="android:navigationBarColor">@color/white</item>
-        <item name="android:windowBackground">@color/white</item>
+
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/colorSurface</item>
+
+        <!-- Text color tokens used by many widgets -->
+        <item name="android:textColorPrimary">@color/colorOnSurface</item>
+        <item name="android:textColorSecondary">@color/gray_600</item>
+        <item name="android:textColor">@color/colorOnSurface</item>
+
+        <!-- App bar / toolbar defaults -->
+        <item name="materialTopAppBarStyle">@style/Widget.Easetalk.TopAppBar</item>
+
+        <!-- Controls default styles -->
+        <item name="android:editTextStyle">@style/Easetalk.Widget.EditText</item>
+        <item name="materialButtonStyle">@style/Easetalk.Widget.MaterialButton</item>
+
+        <!-- Ensure Material components use correct color for ripple / icon tint if needed -->
+        <item name="colorControlActivated">@color/purple_500</item>
     </style>
 
-    <!-- 🚀 Splash Screen Theme -->
-    <style name="Theme.Easetalk.Splash" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Fullscreen splash -->
+    <!-- ===== Splash Theme (keeps MaterialComponents parent) ===== -->
+    <style name="Theme.Easetalk.Splash" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
-        <!-- Optional splash background image -->
         <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <!-- ===== Top App Bar style (applied via materialTopAppBarStyle) ===== -->
+    <style name="Widget.Easetalk.TopAppBar" parent="Widget.MaterialComponents.TopAppBar">
+        <!-- Title color -->
+        <item name="titleTextAppearance">@style/TextAppearance.Easetalk.TopAppBar.Title</item>
+        <item name="navigationIconTint">@color/colorOnSurface</item>
+        <item name="actionMenuTextColor">@color/colorOnSurface</item>
+        <item name="backgroundTint">@color/colorSurface</item>
+    </style>
+
+    <style name="TextAppearance.Easetalk.TopAppBar.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/colorOnSurface</item>
+    </style>
+
+    <!-- ===== EditText style used by android:editTextStyle ===== -->
+    <style name="Easetalk.Widget.EditText" parent="Widget.MaterialComponents.TextInputEditText.Outlined">
+        <item name="android:textColor">@color/colorOnSurface</item>
+        <item name="android:hintTextColor">@color/gray_600</item>
+        <!-- If you don't have a custom cursor drawable, remove the next line -->
+        <!-- <item name="android:textCursorDrawable">@drawable/cursor_color</item> -->
+    </style>
+
+    <!-- ===== MaterialButton default style ===== -->
+    <style name="Easetalk.Widget.MaterialButton" parent="Widget.MaterialComponents.Button">
+        <!-- Buttons by default have white text so they remain readable on colored backgrounds -->
+        <item name="android:textColor">@color/white</item>
+        <item name="android:insetLeft">12dp</item>
+        <item name="android:insetRight">12dp</item>
+        <item name="cornerRadius">24dp</item>
     </style>
 
 </resources>

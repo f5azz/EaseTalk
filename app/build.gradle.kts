@@ -73,11 +73,19 @@ dependencies {
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.firebase:firebase-firestore-ktx")
     implementation("com.google.firebase:firebase-analytics-ktx")
+    // Network + JSON
+// --- Retrofit / Moshi / OkHttp ---
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-moshi:2.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.14")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+
 
     // --- Agora SDK ---
     implementation("io.agora.rtc:full-sdk:4.3.0")
 
-    // --- Networking ---
+    // --- Networking (keep if you still call your server for Agora tokens; remove otherwise) ---
     implementation("com.android.volley:volley:1.2.1")
 
     // --- Google Sign-In (Optional) ---
@@ -85,6 +93,11 @@ dependencies {
 
     // --- Lifecycle / ViewModel ---
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.4")
+
+    // --- ML Kit Language Identification (NEW, free, on-device) ---
+    implementation("com.google.mlkit:language-id:17.0.6")
+
+    implementation("com.google.android.material:material:1.9.0")
 
     // --- Testing ---
     testImplementation("junit:junit:4.13.2")

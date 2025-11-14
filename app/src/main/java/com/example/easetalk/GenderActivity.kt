@@ -39,7 +39,7 @@ class GenderActivity : AppCompatActivity() {
             .addOnSuccessListener {
                 Toast.makeText(this, "AI voice gender set to $gender", Toast.LENGTH_SHORT).show()
                 // continue to language selection
-                startActivity(Intent(this, LanguageActivity::class.java))
+                startActivity(Intent(this, CallOptionsActivity::class.java))
                 finish()
             }
             .addOnFailureListener { e ->

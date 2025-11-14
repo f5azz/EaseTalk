@@ -6,12 +6,12 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:text="Choose an Option"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="32dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Choose Call Option"
+        android:textSize="24sp"
+        android:textStyle="bold" />
     <TextView
         android:id="@+id/tvBotInfo"
         android:layout_width="wrap_content"

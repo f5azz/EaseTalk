@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Easetalk</string>
+    <string name="title_ai_voice_call">AI Voice Call</string>
+    <string name="status_preparing">Preparing AI voice call...</string>
+    <string name="btn_end_call">End Call</string>
+    <string name="btn_speaker_on">Speaker ON</string>
 </resources>
